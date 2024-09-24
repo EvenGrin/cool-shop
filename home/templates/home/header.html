@@ -10,5 +10,12 @@
             </li>
         </ul>
     </nav>
-    <div><a href="/login">Войти</a></div>
+    <div>
+        {% if request.user.is_anonymous %}
+        <a href="/login">Войти</a>
+        <a href="/register">Рег.</a>
+        {% else %}
+        <a href="/logout">Выйти</a>
+        {% endif %}
+    </div>
 </header>
