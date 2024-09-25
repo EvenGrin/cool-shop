@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Coolshop {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <link rel="stylesheet" href="{% static 'home/bootstrap.css' %}">
+    <script src="{% static 'home/script.js' %}"></script>
+    {% block head %} {% endblock %}
+</head>
+<body>
+  {% include 'home/header.html' %}
+  {% block content %}{% endblock %}
+</body>
+</html>

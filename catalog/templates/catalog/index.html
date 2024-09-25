@@ -1,21 +1,15 @@
+{% extends "home/base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'home/style.css' %}">
-    <link rel="stylesheet" href="{% static 'catalog/style.css' %}">
-    <title>CoolShop - каталог</title>
-</head>
-<body>
-    {% include 'home/header.html' %}
+{% block title %} Cool shop: Каталог {% endblock%}
+{% block head %} <link rel="stylesheet" href="{% static 'catalog/style.css' %}"> {% endblock %}
+{% block content %}
     <div class="products-container">
         <ul class="products-list">
             {% for product in products %}
             <li class="product-item">
                 <img src="{{product.image.url}}" alt="пока ничего">
                 <div class="product-title"><a href="/catalog/{{product.id}}">{{product.title}}</a></div>
-    
+
                 <div class="product-description">{{product.description}}</div>
                 <div class="product-price">{{product.price}} р</div>
                 <div class="cat">
@@ -26,7 +20,6 @@
             </li>
             {% endfor %}
         </ul>
-    </div> 
-</body>
-</html>
+    </div>
+{% endblock %}
 

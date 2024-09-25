@@ -1,16 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'home/style.css' %}">
-    <link rel="stylesheet" href="{% static 'home/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'catalog/style.css' %}">
-    <title>Регистрация</title>
-</head>
-<body >
-    {% include 'home/header.html' %}
+{% extends "home/base.html" %}
+{% block title %} Cool shop: Регистрация {% endblock%}
+{% block content %}
     <h1>Регистрация</h1>
     <div class="login-form container">
         <form action="/register/" method="POST" class="d-flex flex-column">
@@ -20,5 +10,4 @@
         </form>
         <div>Уже зарегистрированы, <a href="/login">Войти</a></div>
     </div>
-</body>
-</html>
+{% endblock %}
