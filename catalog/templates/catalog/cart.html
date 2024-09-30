@@ -1,0 +1,14 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+
+{% block title %} Cool shop: Корзина {% endblock%}
+{% block head %} 
+<link rel="stylesheet" href="{% static 'catalog/style.css' %}"> 
+<script src="{% static 'catalog/script.js' %}"></script>
+{% endblock %}
+{% block content %}
+     <ul class="cart-list">
+
+     </ul>
+{% endblock %}

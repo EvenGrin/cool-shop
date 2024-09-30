@@ -7,14 +7,18 @@
         <ul class="products-list">
             {% for product in products %}
             <li  data-id="{{ product.id }}" class="product-item" >
-                <img src="{{product.image.url}}" alt="пока ничего">
+                <img src="{{product.image.url}}" alt="пока ничего" class="product-image">
                 <div class="product-title"><a href="/catalog/{{product.id}}">{{product.title}}</a></div>
                 <div class="product-description">{{product.description}}</div>
                 <div class="product-price">{{product.price}} р</div>
                 <div class="cat">
-                    <img class="icon" src="{{product.category.icon.url}}">
+                    <img class="icon"  src="{{product.category.icon.url}}">
                     <div class="product-category">{{product.category.title}}</div>
                 </div>
+                <div class="position-absolute bottom-0 mb-3">
+                   <button class="product-add-button btn btn-success w-100">Добавить в корзину</button> 
+                </div>
+                
             </li>
             {% endfor %}
         </ul>
