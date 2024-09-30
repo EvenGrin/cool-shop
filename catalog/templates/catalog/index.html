@@ -9,14 +9,12 @@
             <li  data-id="{{ product.id }}" class="product-item" >
                 <img src="{{product.image.url}}" alt="пока ничего">
                 <div class="product-title"><a href="/catalog/{{product.id}}">{{product.title}}</a></div>
-
                 <div class="product-description">{{product.description}}</div>
                 <div class="product-price">{{product.price}} р</div>
                 <div class="cat">
                     <img class="icon" src="{{product.category.icon.url}}">
                     <div class="product-category">{{product.category.title}}</div>
                 </div>
-
             </li>
             {% endfor %}
         </ul>
